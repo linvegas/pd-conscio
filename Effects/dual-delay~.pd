@@ -13,7 +13,7 @@
 #X obj 330 109 r \$0-dlytimeB;
 #X obj 375 231 r \$0-hip;
 #X obj 387 183 r \$0-lop;
-#X text 316 2 SIMPLE DELAY ABSTRACTION;
+#X text 404 18 SIMPLE DELAY ABSTRACTION;
 #N canvas 96 178 534 563 line 0;
 #X obj 37 37 inlet;
 #X msg 37 100 \$1 50;
@@ -59,7 +59,7 @@
 #X restore 330 132 pd line;
 #X obj 491 128 inlet;
 #X obj 491 296 s \$0-dlytimeA;
-#X text 524 367 feedback: 0 - 1;
+#X text 511 380 feedback: 0 - 1;
 #X obj 533 273 s \$0-dlytimeB;
 #X obj 616 227 s \$0-lop;
 #X obj 657 203 s \$0-hip;
@@ -105,7 +105,7 @@
 #X connect 1 0 2 0;
 #X connect 3 0 0 0;
 #X restore 345 366 pd wet;
-#X text 525 405 dry/wet: 0 - 1;
+#X text 511 418 dry/wet: 0 - 1;
 #X obj 268 391 *~;
 #N canvas 0 50 450 300 dry 0;
 #X obj 49 77 pack 0 50;
@@ -120,9 +120,12 @@
 #X connect 3 0 0 0;
 #X connect 5 0 2 0;
 #X restore 283 366 pd dry;
-#X text 525 352 timeL and timeR: 0 - 1000 ms;
-#X text 523 385 lop and hip: 0 - 15000 Hz;
 #X obj 491 157 route timeL timeR feedback lop hip dry/wet;
+#X text 512 344 FLAGS:;
+#X text 512 361 timeL / timeR: 0 - 1000 ms;
+#X text 510 398 lop / hip: 0 - 15000 Hz;
+#X text 707 4 by MisterConscio;
+#X text 530 129 Flags inlet;
 #X connect 0 0 2 0;
 #X connect 0 0 36 0;
 #X connect 1 0 3 0;
@@ -145,7 +148,7 @@
 #X connect 19 0 4 0;
 #X connect 20 0 33 0;
 #X connect 21 0 32 0;
-#X connect 22 0 47 0;
+#X connect 22 0 45 0;
 #X connect 28 0 31 0;
 #X connect 29 0 30 0;
 #X connect 30 0 16 0;
@@ -163,10 +166,10 @@
 #X connect 41 0 18 1;
 #X connect 43 0 5 0;
 #X connect 44 0 43 1;
-#X connect 47 0 23 0;
-#X connect 47 1 25 0;
-#X connect 47 2 34 0;
-#X connect 47 3 26 0;
-#X connect 47 4 27 0;
-#X connect 47 5 37 0;
+#X connect 45 0 23 0;
+#X connect 45 1 25 0;
+#X connect 45 2 34 0;
+#X connect 45 3 26 0;
+#X connect 45 4 27 0;
+#X connect 45 5 37 0;
 #X coords 0 455 1 454 232 100 0;
