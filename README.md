@@ -1,2 +1,2 @@
-# pd-conscio
- Personal Pure Data Abstractions
+# Pure Data Abstractions
+### by Mister Conscio
