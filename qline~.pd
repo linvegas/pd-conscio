@@ -1,0 +1,24 @@
+#N canvas 1450 191 899 538 10;
+#X obj 32 69 sqrt;
+#X obj 32 91 sqrt;
+#X obj 32 47 unpack f f;
+#X obj 32 137 vline~;
+#X obj 32 113 pack, f 10;
+#X obj 32 159 *~;
+#X obj 32 181 *~;
+#X obj 32 204 outlet~;
+#X obj 32 23 inlet;
+#X text 125 69 ENVELOPE QUÁRTICO (QUARTIC);
+#X text 124 108 Quártico = do quarto grau \, biquadrado \, biquadrático
+;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 0 0;
+#X connect 2 1 4 1;
+#X connect 3 0 5 0;
+#X connect 3 0 5 1;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 5 0 6 1;
+#X connect 6 0 7 0;
+#X connect 8 0 2 0;
