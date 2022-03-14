@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 #N canvas 170 121 811 433 10;
 #X obj 8 141 clone -s 1 fmop2-voice~ 8;
 #X obj 8 77 pack f f f;
+=======
+#N canvas 623 190 811 433 10;
+#X obj 8 141 clone -s 1 fmop2-voice~ 8;
+#X obj 8 8 inlet;
+#X obj 8 77 pack f f f;
+#X obj 8 163 outlet~;
+>>>>>>> 9296fe2679479e579cc000ae1ecab05f24f5522e
 #N canvas 817 118 646 822 op-selection 0;
 #X obj 121 303 tabwrite \$0-op0;
 #X obj 18 213 until;
@@ -87,7 +95,11 @@ empty 0 -8 0 10 #606060 #faff00 #000000 0;
 0;
 #X obj 217 32 nbx 5 14 0 36 0 0 \$0-snd-param0 \$0-rcv-param0 ratio
 0 -6 0 9 #bbbbbb #ffffff #ffffff 0 256;
+<<<<<<< HEAD
 #X obj 221 60 hsl 126 14 0 127 0 0 \$0-snd-param1 \$0-rcv-param1 level:100
+=======
+#X obj 221 60 hsl 126 14 0 127 0 0 \$0-snd-param1 \$0-rcv-param1 level:78
+>>>>>>> 9296fe2679479e579cc000ae1ecab05f24f5522e
 -2 -6 0 9 #bbbbbb #ffffff #ffffff 0 1;
 #N canvas 1004 142 1220 781 loadbang 0;
 #X obj 13 13 loadbang;
@@ -361,6 +373,7 @@ empty 0 -8 0 10 #606060 #faff00 #000000 0;
 #X connect 46 0 45 1;
 #X connect 47 0 45 1;
 #X restore 190 183 pd loadbang;
+<<<<<<< HEAD
 #X obj 219 80 vsl 20 55 1 5000 1 0 \$0-snd-param2 \$0-rcv-param2 A:165ms
 -1 63 0 5 #9f9f9f #ffffff #ffffff 0 1;
 #X obj 247 80 vsl 20 55 1 5000 1 0 \$0-snd-param3 \$0-rcv-param3 D:187ms
@@ -368,6 +381,15 @@ empty 0 -8 0 10 #606060 #faff00 #000000 0;
 #X obj 274 80 vsl 20 55 0 100 0 0 \$0-snd-param4 \$0-rcv-param4 S:89
 3 63 0 5 #9f9f9f #ffffff #ffffff 0 1;
 #X obj 302 80 vsl 20 55 1 7500 1 0 \$0-snd-param5 \$0-rcv-param5 R:221ms
+=======
+#X obj 219 80 vsl 20 55 1 5000 1 0 \$0-snd-param2 \$0-rcv-param2 A:604ms
+-1 63 0 5 #9f9f9f #ffffff #ffffff 0 1;
+#X obj 247 80 vsl 20 55 1 5000 1 0 \$0-snd-param3 \$0-rcv-param3 D:2250ms
+-1 63 0 5 #9f9f9f #ffffff #ffffff 0 1;
+#X obj 274 80 vsl 20 55 0 100 0 0 \$0-snd-param4 \$0-rcv-param4 S:19
+3 63 0 5 #9f9f9f #ffffff #ffffff 0 1;
+#X obj 302 80 vsl 20 55 1 7500 1 0 \$0-snd-param5 \$0-rcv-param5 R:325ms
+>>>>>>> 9296fe2679479e579cc000ae1ecab05f24f5522e
 -1 63 0 5 #9f9f9f #ffffff #ffffff 0 1;
 #N canvas 491 387 1178 479 gui 0;
 #X obj 16 12 r \$0-snd-param1;
@@ -482,9 +504,15 @@ empty 0 -8 0 10 #606060 #faff00 #000000 0;
 #X obj 272 32 hsl 76 14 0 1 0 0 \$0-snd-param7 \$0-rcv-param7 feedback:0
 -2 -6 0 9 #bbbbbb #ffffff #ffffff 0 1;
 #X obj 195 131 tgl 15 0 \$0-s-tgl_op_sel0 \$0-r-tgl_op_sel0 1 4 8 0
+<<<<<<< HEAD
 13 #e8e828 #e8e828 #7c7c7c 0 1;
 #X obj 195 111 tgl 15 0 \$0-s-tgl_op_sel1 \$0-r-tgl_op_sel1 2 4 8 0
 13 #7c7c7c #7c7c7c #e8e828 0 2;
+=======
+13 #7c7c7c #7c7c7c #e8e828 0 1;
+#X obj 195 111 tgl 15 0 \$0-s-tgl_op_sel1 \$0-r-tgl_op_sel1 2 4 8 0
+13 #e8e828 #e8e828 #7c7c7c 0 2;
+>>>>>>> 9296fe2679479e579cc000ae1ecab05f24f5522e
 #X obj 195 89 tgl 15 0 \$0-s-tgl_op_sel2 \$0-r-tgl_op_sel2 3 4 8 0
 13 #7c7c7c #7c7c7c #e8e828 0 3;
 #X obj 195 67 tgl 15 0 \$0-s-tgl_op_sel3 \$0-r-tgl_op_sel3 4 4 8 0
@@ -654,6 +682,7 @@ empty 0 -8 0 10 #606060 #faff00 #000000 0;
 #X restore 269 183 pd tgl-op-sel;
 #X obj 331 79 bng 15 250 50 0 \$0-s-bgn_rnd \$0-r-bgn_rnd ? 5 8 0 10
 #9c00ff #faff00 #faff00;
+<<<<<<< HEAD
 #X obj 8 8 r fmop2;
 #X obj 8 163 outlet~;
 #X connect 0 0 26 0;
@@ -665,4 +694,15 @@ empty 0 -8 0 10 #606060 #faff00 #000000 0;
 #X connect 14 0 13 0;
 #X connect 14 1 13 1;
 #X connect 25 0 14 0;
+=======
+#X connect 0 0 3 0;
+#X connect 1 0 16 0;
+#X connect 2 0 0 0;
+#X connect 14 0 0 0;
+#X connect 15 0 2 0;
+#X connect 15 1 2 1;
+#X connect 15 2 2 2;
+#X connect 16 0 15 0;
+#X connect 16 1 15 1;
+>>>>>>> 9296fe2679479e579cc000ae1ecab05f24f5522e
 #X coords 0 -1 1 1 165 130 2 190 20;
