@@ -1,5 +1,5 @@
-#N canvas 150 202 756 702 10;
-#N canvas 1480 44 756 946 open-file 0;
+#N canvas 1009 227 756 702 10;
+#N canvas 1173 36 756 946 open-file 0;
 #X obj 16 207 soundfiler;
 #X obj 16 109 pack s \$0;
 #X obj 73 262 unpack f f f f s;
@@ -93,7 +93,7 @@
 #X connect 20 0 19 0;
 #X restore 16 59 pd opnepanel-files-list;
 #X obj 40 132 t s a;
-#X msg 16 34 symbol C:/Users/saulo/Music/Samples;
+#X msg 16 34 symbol /home/conscio/media/samps;
 #X connect 0 0 8 0;
 #X connect 0 0 7 0;
 #X connect 0 1 2 0;
@@ -139,7 +139,6 @@
 #X connect 5 0 4 1;
 #X restore 136 155 pd pitch;
 #X obj 87 172 /;
-#X obj 87 146 / 44.1;
 #N canvas 79 198 755 538 loadbang 0;
 #X obj 17 11 loadbang;
 #X obj 17 155 s \$0-samp-display;
@@ -178,21 +177,21 @@ empty -2 -8 0 10 #43434a #ffffff #ffffff 0 1;
 #X obj 12 317 outlet~;
 #X obj 12 14 inlet;
 #X obj 341 23 bng 14 250 50 0 \$0-snd-bng-load \$0-rcv-bng-load L 5
-7 0 9 #606060 #ffffff #faff00;
+7 0 7 #606060 #ffffff #faff00;
 #N canvas 224 224 783 609 (subpatch) 0;
 #X array \$0-samp-display 47468 float 2;
 #X coords 0 1 47468 -1 126 25 2 0 0;
 #X restore 229 50 graph;
 #X obj 228 32 cnv 7 100 17 empty empty empty 2 4 0 9 #282c33 #282c33
 0;
-#X obj 228 39 cnv 7 70 10 \$0-s-cnv_display \$0-r-cnv_display sfx_menu_select4.wav
-2 4 0 8 #282c33 #e6d36b 0;
+#X obj 228 39 cnv 7 70 10 \$0-s-cnv_display \$0-r-cnv_display sample.wav
+2 4 0 6 #282c33 #e6d36b 0;
 #X obj 292 23 nbx 2 14 0 9 0 0 \$0-s-samp_sel \$0-r-samp_sel empty
-0 -8 0 10 #9f9f9f #faff00 #faff00 0 256;
-#X obj 276 24 tgl 12 0 \$0-s-tgl-samp_r \$0-r-tgl-samp_r ▶ 4 5 0
-10 #606060 #606060 #fcfcfc 0 1;
+0 -8 0 8 #9f9f9f #faff00 #faff00 0 256;
+#X obj 276 24 tgl 12 0 \$0-s-tgl-samp_r \$0-r-tgl-samp_r ▶ 3 5 0
+8 #606060 #606060 #fcfcfc 0 1;
 #X obj 260 24 tgl 12 0 \$0-s-tgl-samp_l \$0-r-tgl-samp_l ◀ 3 5 0
-10 #606060 #606060 #fcfcfc 0 1;
+8 #606060 #606060 #fcfcfc 0 1;
 #N canvas 1023 342 670 503 tgl-scale-sel 0;
 #X obj 25 41 t b;
 #X msg 25 124 color 5 5 0;
@@ -241,7 +240,7 @@ empty -2 -8 0 10 #43434a #ffffff #ffffff 0 1;
 #X connect 8 0 4 1;
 #X restore 12 219 pd fwrd/rvrs;
 #X obj 324 23 tgl 14 0 \$0-s-tgl-reverse \$0-r-tgl-reverse R 4 7 0
-10 #606060 #606060 #e8e828 0 1;
+8 #606060 #606060 #e8e828 0 1;
 #N canvas 61 73 476 399 tgl-reverse 0;
 #X obj 25 19 r \$0-s-tgl-reverse;
 #X obj 25 157 s \$0-r-tgl-reverse;
@@ -256,23 +255,36 @@ empty -2 -8 0 10 #43434a #ffffff #ffffff 0 1;
 #X restore 261 271 pd tgl-reverse;
 #X obj 233 113 inlet;
 #X obj 233 135 s \$0-samp-sel;
-#X connect 1 0 16 0;
+#N canvas 525 422 517 315 s/r 0;
+#X obj 20 66 / 44.1;
+#X obj 20 40 inlet;
+#X obj 92 38 samplerate~;
+#X obj 92 62 / 1000;
+#X obj 92 13 loadbang;
+#X obj 20 88 outlet;
+#X connect 0 0 5 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 1;
+#X connect 4 0 2 0;
+#X restore 78 144 pd s/r;
+#X connect 1 0 15 0;
 #X connect 3 0 1 0;
-#X connect 3 0 12 0;
-#X connect 4 0 26 0;
+#X connect 3 0 11 0;
+#X connect 4 0 25 0;
 #X connect 5 0 7 1;
 #X connect 6 0 4 1;
-#X connect 6 1 10 0;
+#X connect 6 1 30 0;
 #X connect 6 2 8 0;
 #X connect 7 0 6 0;
 #X connect 8 0 9 1;
 #X connect 9 0 4 2;
-#X connect 10 0 9 0;
-#X connect 14 0 4 0;
-#X connect 14 1 7 0;
-#X connect 14 2 15 0;
-#X connect 15 0 8 1;
-#X connect 17 0 14 0;
-#X connect 26 0 3 0;
-#X connect 29 0 30 0;
+#X connect 13 0 4 0;
+#X connect 13 1 7 0;
+#X connect 13 2 14 0;
+#X connect 14 0 8 1;
+#X connect 16 0 13 0;
+#X connect 25 0 3 0;
+#X connect 28 0 29 0;
+#X connect 30 0 9 0;
 #X coords 0 -1 1 1 134 60 2 225 20;

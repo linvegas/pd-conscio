@@ -1,10 +1,10 @@
-#N canvas 1004 186 676 625 10;
+#N canvas 201 185 676 625 10;
 #X obj 156 156 s \$0-gain_meter;
 #X obj 99 52 r \$0-gain_adjust;
 #X obj 26 268 outlet~ L;
 #X obj 61 237 *~;
 #X obj 154 226 hsl 100 16 -80 0 0 0 \$0-gain_adjust \$0-gain_meter
--12db 0 9 0 10 -116512 -262144 -262144 16830 1;
+-12db -2 8 0 7 #70707c #fcfcfc #fcfcfc 0 1;
 #X obj 26 185 *~;
 #X obj 61 196 *~;
 #X obj 183 86 loadbang;
@@ -20,7 +20,7 @@
 #X obj 59 142 cos~;
 #X obj 59 67 + 0.75;
 #X obj 115 134 hsl 100 15 0 1 0 0 \$0-panning \$0-pan_meter -50- 0
-7 0 10 -116512 -204800 -4032 9900 1;
+7 0 10 #70707c #c4fcfc #00f8fc 0 1;
 #X obj 113 101 s \$0-pan_meter;
 #X msg 113 77 label -\$1-;
 #X obj 113 53 int;

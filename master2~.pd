@@ -1,4 +1,4 @@
-#N canvas 748 18 1503 959 10;
+#N canvas 169 7 1503 959 10;
 #X obj 16 271 dac~, f 12;
 #X obj 16 244 *~;
 #X obj 85 244 *~;
@@ -114,7 +114,7 @@
 #X obj 222 218 *~ 1;
 #X obj 279 218 *~ 1;
 #X obj 536 117 vsl 20 110 100 0.01 1 0 \$0-output_vol_s \$0-output_vol_r
--6.0db -1 -7 0 6 #70707c #fcfcfc #fcfcfc 0 1;
+-6.0db -2 -8 0 5 #70707c #fcfcfc #fcfcfc 0 1;
 #X obj 634 289 tgl 15 0 \$0-tgl2-mute \$0-tgl2-color M 5 8 0 10 #7c7c7c
 #28f4f4 #fcfcfc 0 1;
 #N canvas 220 100 787 754 clock 0;
@@ -234,9 +234,9 @@
 #X connect 6 0 2 0;
 #X connect 7 0 2 0;
 #X restore 633 266 pd tgl-mute;
-#X obj 565 217 tgl 13 0 \$0-tgl1-rec \$0-tgl1-color ● 4 5 0 10 #7c7c7c
+#X obj 565 217 tgl 13 0 \$0-tgl1-rec \$0-tgl1-color ● 3 5 0 9 #7c7c7c
 #28f4f4 #fcfcfc 0 1;
-#X obj 592 217 cnv 10 1 1 empty \$0-timer 00:00:07 5 7 0 10 #282c33
+#X obj 592 217 cnv 10 1 1 empty \$0-timer 00:00:13 5 7 0 7 #282c33
 #fcfcfc 0;
 #N canvas 96 96 450 300 ch-master 0;
 #X obj 14 29 catch~ ch-master-L;
@@ -252,14 +252,13 @@
 #X obj 420 95 * -1;
 #X symbolatom 563 200 22 0 0 1 .wav \$0-r-filename \$0-s-filename 8
 ;
-#X msg 294 400 open C:/Users/saulo/Documents/Pd/samples/master2/\$1
-;
 #X obj 294 377 symbol;
 #X obj 327 329 r \$0-s-filename;
 #X obj 327 351 makefilename %s.wav;
 #X obj 342 240 loadbang;
 #X msg 342 262 symbol name-your-track;
 #X obj 342 284 s \$0-r-filename;
+#X msg 294 400 open /home/conscio/pd/samples/master2/\$1;
 #X connect 1 0 0 0;
 #X connect 1 0 23 0;
 #X connect 2 0 0 1;
@@ -282,7 +281,7 @@
 #X connect 14 0 15 0;
 #X connect 14 1 18 0;
 #X connect 15 0 17 0;
-#X connect 15 1 49 0;
+#X connect 15 1 48 0;
 #X connect 16 0 11 0;
 #X connect 17 0 16 0;
 #X connect 18 0 11 0;
@@ -306,10 +305,10 @@
 #X connect 44 0 46 0;
 #X connect 45 0 6 0;
 #X connect 46 0 6 0;
-#X connect 48 0 11 0;
-#X connect 49 0 48 0;
-#X connect 50 0 51 0;
-#X connect 51 0 49 1;
+#X connect 48 0 54 0;
+#X connect 49 0 50 0;
+#X connect 50 0 48 1;
+#X connect 51 0 52 0;
 #X connect 52 0 53 0;
-#X connect 53 0 54 0;
+#X connect 54 0 11 0;
 #X coords 0 -1 1 1 179 134 2 530 100;

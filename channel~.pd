@@ -1,14 +1,14 @@
-#N canvas 1326 77 879 894 10;
+#N canvas 968 60 879 894 10;
 #X obj 25 305 *~;
 #X obj 40 39 r \$0-snd-hsld-volume;
 #X obj 40 237 pack 0 50;
 #X obj 40 259 line~;
 #X msg 53 189 label \$1;
 #X obj 53 211 s \$0-rcv-hsld-volume;
-#X obj 251 41 cnv 8 110 49 \$0-snd-cnv-label \$0-rcv-cnv-label ch1:perc
-2 7 0 9 #606060 #e8e828 0;
+#X obj 251 41 cnv 8 110 49 \$0-snd-cnv-label \$0-rcv-cnv-label ch1:kick-fm
+2 7 0 6 #606060 #14e814 0;
 #X obj 256 56 hsl 100 15 -100 0 0 0 \$0-snd-hsld-volume \$0-rcv-hsld-volume
--6.0db 64 -8 0 9 #9f9f9f #ffffff #ffffff 0 1;
+-12.5db 72 -8 0 6 #9f9f9f #ffffff #ffffff 0 1;
 #X obj 248 105 loadbang;
 #X obj 347 189 symbol \$2;
 #X obj 248 273 s \$0-rcv-cnv-label;
@@ -19,9 +19,9 @@
 #X obj 155 188 loadbang;
 #X msg 248 251 label ch\$1:\$2;
 #X obj 25 14 catch~ ch\$1;
-#X obj 286 75 hsl 70 11 0 1 0 0 \$0-snd-hsld-pan \$0-rcv-hsld-pan L\\\ \\\ \\\ \\\ \\\ \\\ \\\ \\\ \\\ \\\ \\\ \\\ \\\ \\\ \\\ R
-1 6 0 7 #7c7c7c #ffffff #ffffff 0 1;
-#X obj 254 74 tgl 12 0 \$0-snd-tgl-mute \$0-rcv-tgl-mute M 3 6 0 10
+#X obj 286 75 hsl 70 11 0 1 0 0 \$0-snd-hsld-pan \$0-rcv-hsld-pan L\ \ \ \ \ \ \ \ \ \ \ \ \ R
+1 5 0 6 #7c7c7c #ffffff #ffffff 0 1;
+#X obj 254 74 tgl 12 0 \$0-snd-tgl-mute \$0-rcv-tgl-mute M 3 6 0 8
 #000000 #000000 #fcfcfc 0 1;
 #X obj 25 415 throw~ ch-master-L;
 #X obj 58 392 throw~ ch-master-R;
@@ -110,7 +110,7 @@
 #X connect 17 1 2 0;
 #X restore 25 367 pd pan;
 #X obj 40 139 dbtorms;
-#N canvas 64 64 450 300 expr 0;
+#N canvas 771 264 450 300 expr 0;
 #X obj 37 37 inlet;
 #X obj 37 111 outlet;
 #X obj 37 89 expr if($f1 <= 80 \, $f1 \, 80);
@@ -243,8 +243,8 @@
 #X obj 112 338 *~;
 #X msg 40 88 100 \$1;
 #X obj 53 167 makefilename -%.1fdb;
-#X obj 254 57 cnv 1 75 12 \$0-s-cnv_slider \$0-r-cnv_slider empty 20
-12 0 14 #e8e828 #e8e828 0;
+#X obj 254 57 cnv 1 64 12 \$0-s-cnv_slider \$0-r-cnv_slider empty 20
+12 0 14 #14e814 #14e814 0;
 #N canvas 995 189 450 434 canvas-slider 0;
 #X obj 18 167 s \$0-r-cnv_slider;
 #X obj 18 12 r \$0-snd-hsld-volume;
@@ -269,9 +269,6 @@
 #X connect 0 1 1 0;
 #X connect 3 0 0 0;
 #X restore 244 408 pd preset;
-#X obj 104 97 expr pow($f1 \, 2)/100;
-#X floatatom 104 119 5 0 0 0 - - - 0;
-#X msg 104 75 -80;
 #X obj 40 110 -;
 #X msg 117 188 -24.5;
 #X obj 244 386 r channel\$1;
@@ -288,7 +285,7 @@
 #X connect 12 0 13 0;
 #X connect 13 0 14 0;
 #X connect 14 0 16 0;
-#X connect 15 0 42 0;
+#X connect 15 0 39 0;
 #X connect 16 0 10 0;
 #X connect 17 0 0 0;
 #X connect 24 0 0 1;
@@ -301,11 +298,9 @@
 #X connect 30 0 0 0;
 #X connect 31 0 32 0;
 #X connect 32 0 25 1;
-#X connect 33 0 41 0;
+#X connect 33 0 38 0;
 #X connect 34 0 4 0;
-#X connect 38 0 39 0;
-#X connect 40 0 38 0;
-#X connect 41 0 26 0;
-#X connect 42 0 5 0;
-#X connect 43 0 37 0;
+#X connect 38 0 26 0;
+#X connect 39 0 5 0;
+#X connect 40 0 37 0;
 #X coords 0 -1 1 1 112 51 2 250 40;

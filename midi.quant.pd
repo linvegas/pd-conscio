@@ -195,9 +195,9 @@
 #X connect 18 0 4 0;
 #X restore 16 104 pd scale-list;
 #X obj 34 31 tgl 12 0 \$0-s-scale_sel_r \$0-r-scale_sel_r ▶ 4 5 0
-10 #606060 #606060 #fcfcfc 0 1;
+8 #606060 #606060 #fcfcfc 0 1;
 #X obj 18 31 tgl 12 0 \$0-s-scale_sel_l \$0-r-scale_sel_l ◀ 3 5 0
-10 #606060 #606060 #fcfcfc 0 1;
+8 #606060 #606060 #fcfcfc 0 1;
 #N canvas 1726 155 670 503 tgl-scale-sel 0;
 #X obj 25 19 r \$0-s-scale_sel_l;
 #X obj 25 157 s \$0-r-scale_sel_l;
@@ -224,16 +224,16 @@
 #X connect 10 0 4 0;
 #X connect 11 0 7 0;
 #X restore 16 73 pd tgl-scale-sel;
-#X obj 70 32 bng 11 250 50 0 \$0-s-rnd_scale \$0-r-rnd_scale random
-12 5 0 8 #c6ffc7 #202020 #ffffff;
+#X obj 51 32 bng 11 250 50 0 \$0-s-rnd_scale \$0-r-rnd_scale random
+12 5 0 6 #c6ffc7 #202020 #ffffff;
 #X obj 161 18 inlet midi;
 #X obj 186 48 inlet root;
 #X obj 18 130 r midi.quant;
 #X obj 18 152 route scale root;
 #X obj 64 173 s \$0-lb-root;
 #X obj 18 195 s \$0-lb-scale;
-#X obj 17 17 cnv 10 97 13 empty \$0-r-scale_display 22-Engimatic(desc)
-0 6 0 8 #282c33 #ffffff 0;
+#X obj 17 17 cnv 10 1 1 empty \$0-r-scale_display 23-Neapolitan_Major
+0 6 0 6 #282c33 #ffffff 0;
 #X connect 0 0 1 0;
 #X connect 3 0 0 2;
 #X connect 9 0 0 0;
@@ -241,4 +241,4 @@
 #X connect 11 0 12 0;
 #X connect 12 0 14 0;
 #X connect 12 1 13 0;
-#X coords 0 -1 1 1 102 32 2 15 15;
+#X coords 0 -1 1 1 94 32 2 15 15;
