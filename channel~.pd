@@ -1,14 +1,14 @@
-#N canvas 968 60 879 894 10;
+#N canvas 1316 54 879 894 10;
 #X obj 25 305 *~;
 #X obj 40 39 r \$0-snd-hsld-volume;
 #X obj 40 237 pack 0 50;
 #X obj 40 259 line~;
 #X msg 53 189 label \$1;
 #X obj 53 211 s \$0-rcv-hsld-volume;
-#X obj 251 41 cnv 8 110 49 \$0-snd-cnv-label \$0-rcv-cnv-label ch1:kick-fm
-2 7 0 6 #606060 #14e814 0;
+#X obj 251 41 cnv 8 110 49 \$0-snd-cnv-label \$0-rcv-cnv-label ch1:kick
+2 7 0 6 #606060 #fcfcfc 0;
 #X obj 256 56 hsl 100 15 -100 0 0 0 \$0-snd-hsld-volume \$0-rcv-hsld-volume
--12.5db 72 -8 0 6 #9f9f9f #ffffff #ffffff 0 1;
+-6.0db 72 -8 0 6 #9f9f9f #ffffff #ffffff 0 1;
 #X obj 248 105 loadbang;
 #X obj 347 189 symbol \$2;
 #X obj 248 273 s \$0-rcv-cnv-label;
@@ -19,41 +19,43 @@
 #X obj 155 188 loadbang;
 #X msg 248 251 label ch\$1:\$2;
 #X obj 25 14 catch~ ch\$1;
-#X obj 286 75 hsl 70 11 0 1 0 0 \$0-snd-hsld-pan \$0-rcv-hsld-pan L\ \ \ \ \ \ \ \ \ \ \ \ \ R
+#X obj 286 75 hsl 70 11 0 1 0 0 \$0-snd-hsld-pan \$0-rcv-hsld-pan L\\\ \\\ \\\ \\\ \\\ \\\ \\\ \\\ \\\ \\\ \\\ \\\ \\\ R
 1 5 0 6 #7c7c7c #ffffff #ffffff 0 1;
 #X obj 254 74 tgl 12 0 \$0-snd-tgl-mute \$0-rcv-tgl-mute M 3 6 0 8
 #000000 #000000 #fcfcfc 0 1;
 #X obj 25 415 throw~ ch-master-L;
 #X obj 58 392 throw~ ch-master-R;
 #X obj 39 335 s~ ch\$1;
-#N canvas 64 64 593 356 tgl-mute 0;
+#N canvas 178 242 593 356 tgl-mute 0;
 #X obj 22 12 r \$0-snd-tgl-mute;
 #X obj 22 119 s \$0-rcv-tgl-mute;
 #X msg 66 63 color 22 22 0;
 #X msg 22 88 color 13 13 29;
 #X obj 184 22 loadbang;
-#X msg 184 44 1;
-#X obj 22 34 sel 0 1, f 15;
-#X connect 0 0 6 0;
+#X obj 22 34 sel 1 0, f 15;
+#X msg 184 44 0;
+#X connect 0 0 5 0;
 #X connect 2 0 1 0;
 #X connect 3 0 1 0;
-#X connect 4 0 5 0;
-#X connect 5 0 1 0;
-#X connect 6 0 3 0;
-#X connect 6 1 2 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X connect 5 1 2 0;
+#X connect 6 0 1 0;
 #X restore 245 310 pd tgl-mute;
-#N canvas 96 96 450 300 mute 0;
+#N canvas 363 490 558 476 mute 0;
 #X obj 37 37 inlet~;
-#X obj 37 98 *~;
+#X obj 37 148 *~;
 #X obj 90 37 r \$0-snd-tgl-mute;
-#X obj 90 59 pack 0 25;
-#X obj 90 81 line~;
-#X obj 37 120 outlet~;
+#X obj 90 109 pack 0 25;
+#X obj 90 131 line~;
+#X obj 37 170 outlet~;
+#X obj 90 73 == 0;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
-#X connect 2 0 3 0;
+#X connect 2 0 6 0;
 #X connect 3 0 4 0;
 #X connect 4 0 1 1;
+#X connect 6 0 3 0;
 #X restore 40 281 pd mute;
 #N canvas 577 341 637 597 pan 0;
 #X obj 25 146 inlet~;
@@ -243,8 +245,8 @@
 #X obj 112 338 *~;
 #X msg 40 88 100 \$1;
 #X obj 53 167 makefilename -%.1fdb;
-#X obj 254 57 cnv 1 64 12 \$0-s-cnv_slider \$0-r-cnv_slider empty 20
-12 0 14 #14e814 #14e814 0;
+#X obj 254 57 cnv 1 75 12 \$0-s-cnv_slider \$0-r-cnv_slider empty 20
+12 0 14 #fcfcfc #fcfcfc 0;
 #N canvas 995 189 450 434 canvas-slider 0;
 #X obj 18 167 s \$0-r-cnv_slider;
 #X obj 18 12 r \$0-snd-hsld-volume;
@@ -260,14 +262,16 @@
 #X connect 5 0 6 0;
 #X connect 6 0 2 0;
 #X restore 245 354 pd canvas-slider;
-#N canvas 87 150 535 386 preset 0;
-#X obj 47 43 route vol pan;
-#X obj 85 67 s \$0-rcv-hsld-pan;
-#X obj 47 92 s \$0-rcv-hsld-volume;
+#N canvas 681 279 535 386 preset 0;
+#X obj 82 106 s \$0-rcv-hsld-pan;
+#X obj 47 131 s \$0-rcv-hsld-volume;
 #X obj 47 15 inlet;
-#X connect 0 0 2 0;
-#X connect 0 1 1 0;
-#X connect 3 0 0 0;
+#X obj 47 43 route vol pan mute;
+#X obj 117 76 s \$0-rcv-tgl-mute;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 3 1 0 0;
+#X connect 3 2 4 0;
 #X restore 244 408 pd preset;
 #X obj 40 110 -;
 #X msg 117 188 -24.5;
