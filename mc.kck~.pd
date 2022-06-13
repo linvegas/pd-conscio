@@ -1,4 +1,4 @@
-#N canvas 714 86 886 866 8;
+#N canvas 1107 73 886 866 8;
 #X obj 238 206 expr~ ($v1<0.5)*2-1;
 #X obj 178 325 *~, f 18;
 #X obj 178 235 vline~;
@@ -155,13 +155,13 @@
 6 0 8 #404040 #faff00 #ffffff 0 256;
 #X obj 56 39 nbx 4 12 0.1 8 0 0 \$0-s-n2-pitch \$0-r-n2-pitch Pitch
 -32 6 0 8 #bbbbbb #000000 #ffffff 0 256;
-#X obj 178 388 s~ phasor.kick;
 #X obj 87 26 cnv 4 6 6 empty \$0-r-cnv-trg empty 20 12 0 14 #285014
 #fcfcfc 0;
 #X obj 68 24 bng 10 100 50 0 \$0-s-bng-test \$0-r-bng-test empty 17
 7 0 10 #ff0400 #ffffff #000000;
-#X obj 178 24 r phasor.kick~;
 #X msg 178 215 \$1 \, 0 \$2;
+#X obj 178 24 r mc.kck~;
+#X obj 178 388 s~ mc.kck;
 #X connect 0 0 11 0;
 #X connect 1 0 19 0;
 #X connect 2 0 3 0;
@@ -180,8 +180,8 @@
 #X connect 14 0 24 0;
 #X connect 15 0 16 0;
 #X connect 16 0 13 1;
-#X connect 18 0 40 0;
-#X connect 19 0 36 0;
+#X connect 18 0 38 0;
+#X connect 19 0 40 0;
 #X connect 20 0 19 1;
 #X connect 21 0 17 0;
 #X connect 22 0 20 0;
@@ -191,6 +191,6 @@
 #X connect 26 0 4 0;
 #X connect 28 0 11 1;
 #X connect 29 0 9 0;
+#X connect 38 0 2 0;
 #X connect 39 0 26 0;
-#X connect 40 0 2 0;
 #X coords 0 -1 1 1 105 95 2 20 20;
