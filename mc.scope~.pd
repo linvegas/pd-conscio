@@ -1,21 +1,21 @@
-#N canvas 703 218 924 316 10;
+#N canvas 1279 435 924 316 10;
 #X obj 178 75 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$1-scope 256 float 0;
-#X coords 0 1 255 -1 100 84 2 0 0;
+#X array \$1-scope 512 float 0;
+#X coords 0 1 511 -1 100 84 2 0 0;
 #X restore 32 44 graph;
 #X obj 178 46 loadbang;
 #X obj 178 98 metro 100;
 #X obj 165 132 tabwrite~ \$1-scope;
-#X obj 102 33 cnv 5 1 1 \$0-snd-show_id \$0-rcv-show_id 1 20 3 0 9
-#282c33 #ffffff 0;
+#X obj 121 32 cnv 5 9 9 \$0-snd-show_id \$0-rcv-show_id 1 2 5 0 9 #dfdfdf
+#000000 0;
 #X obj 244 39 f \$1;
 #X obj 244 109 s \$0-rcv-show_id;
 #X msg 244 85 label \$1;
 #X obj 244 62 makefilename %d;
 #X msg 345 56 \; \$1-scope width 1;
-#X obj 165 15 catch~ scp\$1;
+#X obj 165 15 catch~ mc.scope\$1;
 #X connect 0 0 3 0;
 #X connect 2 0 0 0;
 #X connect 2 0 6 0;
