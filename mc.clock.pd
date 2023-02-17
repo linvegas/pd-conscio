@@ -80,14 +80,13 @@
 #X obj 14 299 outlet count;
 #X obj 105 299 outlet ms;
 #X obj 179 299 outlet state;
-#X obj 277 299 outlet reset;
-#X obj 277 202 sel 0;
+#X obj 265 202 outlet reset;
 #X connect 0 0 4 1;
 #X connect 1 0 9 0;
 #X connect 1 1 2 0;
 #X connect 2 0 4 1;
 #X connect 2 0 17 0;
-#X connect 2 0 24 0;
+#X connect 2 0 23 0;
 #X connect 3 0 1 0;
 #X connect 4 0 0 0;
 #X connect 4 0 14 0;
@@ -102,5 +101,4 @@
 #X connect 16 0 11 0;
 #X connect 17 0 18 0;
 #X connect 18 0 19 0;
-#X connect 24 0 23 0;
 #X coords 0 -1 1 1 94 20 2 220 20;
